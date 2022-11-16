@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="module" version="3.0.0" client="site" method="upgrade">
+    <name>mod_jshopping_wishboxsimpleajaxfilter</name>
+    <creationDate>17.09.2022</creationDate>
+    <author>Nekrasov Vitaliy</author>
+    <authorEmail>nekrasov_vitaliy@list.ru</authorEmail>
+    <version>1.0.0</version>
+    <description>MOD_JSHOPPING_WISHBOXSIMPLEAJAXFILTER_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_jshopping_wishboxsimpleajaxfilter">mod_jshopping_wishboxsimpleajaxfilter.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>language</folder>
+        <folder>element</folder>
+        <folder>assets</folder>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="language">
+        <language tag="ru-RU">ru-RU/ru-RU.mod_jshopping_wishboxsimpleajaxfilter.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_jshopping_wishboxsimpleajaxfilter.ini</language>
+        <language tag="uk-UA">uk-UA/uk-UA.mod_jshopping_wishboxsimpleajaxfilter.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="bs_version" type="radio" class="btn-group" default="1" label="Bootstrap version" description="Bootstrap verssion">
+                    <option value="1">2.*.*</option>
+                    <option value="2">3.*.*</option>
+                    <option value="3">4.*.*</option>
+                </field>
+                <field name="show_on_all_pages" type="radio" class="btn-group" default="0" label="SHOW_ON_ALL_PAGES" description="SHOW_ON_ALL_PAGES">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="show_manufacturers" type="radio" class="btn-group" default="0" label="SHOW_MANUFACTURERS" description="SHOW_MANUFACTURERS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYESCHECKBOX</option>
+                    <option value="2">JYESSELECT</option>
+                </field>
+                <field name="show_categorys" type="radio" class="btn-group" default="2" label="SHOW_CATEGORYS" description="SHOW_CATEGORYS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYESCHECKBOX</option>
+                    <option value="2">JYESSELECT</option>
+                </field>
+                <field name="hide_subcategorys" type="radio" class="btn-group" default="0" label="HIDE_SUBCATEGORYS" description="HIDE_SUBCATEGORYS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="show_vendors" type="radio" class="btn-group" default="0" label="SHOW_VENDORS" description="SHOW_VENDORS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYESCHECKBOX</option>
+                    <option value="2">JYESSELECT</option>
+                </field>
+                <field name="show_prices" type="radio" class="btn-group" default="1" label="SHOW_PRICES" description="SHOW_PRICES">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="show_characteristics" type="radio" class="btn-group" default="2" label="SHOW_CHARACTERISTICS" description="SHOW_CHARACTERISTICS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYESCHECKBOX</option>
+                    <option value="2">JYESSELECT</option>
+                </field>
+                <field
+					name="characteristics_id"
+					type="characteristics"
+					size="10"
+					default=""
+					label="CHARACTERISTICS"
+					description="CHARACTERISTICS"
+					addfieldpath="/modules/mod_jshopping_wishboxsimpleajaxfilter/element"
+					layout="joomla.form.field.list-fancy-select"
+					multiple="true"
+				/>
+                <field name="show_labels" type="radio" class="btn-group" default="1" label="SHOW_LABELS" description="SHOW_LABELS">
+                    <option value="0">JNO</option>
+                    <option value="1">JYESCHECKBOX</option>
+                    <option value="2">JYESSELECT</option>
+                </field>
+                <field name="show_attributes" type="radio" class="btn-group" default="0" label="ATTRIBUTES" description="ATTRIBUTES">
+                    <option value="0">JNO</option>
+                    <option value="1">JYESCHECKBOX</option>
+                    <option value="2">JYESSELECT</option>
+                </field>
+                <field
+					name="attr_id"
+					type="attributes"
+					size="10"
+					default=""
+					label="ATTRIBUTES_ID"
+					description="ATTRIBUTES_ID"
+					addfieldpath="/modules/mod_jshopping_wishboxsimpleajaxfilter/element"
+					layout="joomla.form.field.list-fancy-select"
+					multiple="true"
+				/>
+                <!--<field name="show_attribute_image" type="attributes" size="10" default="" label="ATTRIBUTES_IMAGE" description="ATTRIBUTES_IMAGE" addfieldpath="/modules/mod_jshopping_simpleajax_filter/element" />-->
+                <field name="show_quantity" type="radio" class="btn-group" default="0" label="SHOW_PRODUCTS_IN_STOCK" description="SHOW_PRODUCTS_IN_STOCK">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="show_photo_filter" type="radio" class="btn-group" default="0" label="SHOW_PHOTO" description="SHOW_PHOTO">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="show_reviews" type="radio" class="btn-group" default="0" label="SHOW_REVIEWS" description="Show_reviews">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="show_delivery_time" type="radio" class="btn-group" default="0" label="SHOW_DELIVERY" description="SHOW_DELIVERY">
+                    <option value="0">JNO</option>
+                    <option value="1">JYESCHECKBOX</option>
+                    <option value="2">JYESSELECT</option>
+                </field>
+
+                <field name="display_unavailable_value" type="radio" class="btn-group" default="0" label="DISPLAY_UNAVAILABLE" description="DISPLAY_UNAVAILABLE">
+                    <option value="0">UNAVAILABLE_NO</option>
+                    <option value="1">UNAVAILABLE_DISABLE</option>
+                </field>
+                <field name="animate_filter" type="radio" class="btn-group" default="0" label="ANIMATE_FILTER" description="ANIMATE_FILTER">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="hide_onmobile" type="radio" class="btn-group" default="1" label="HIDE_ONMOBILE" description="HIDE_ONMOBILE">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="ajax_on" type="radio" class="btn-group" default="1" label="AJAX_ON" description="AJAX_ON">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="auto_filter" type="radio" class="btn-group" default="1" label="AUTO_FILTER" description="AUTO_FILTER">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field
+					name="moduleclass_sfx"
+					type="textarea"
+					rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+				/>
+				<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+				/>
+                <field name="cachemode" type="hidden" default="itemid">
+                    <option value="itemid"></option>
+                </field>	
+            </fieldset>
+        </fields>
+    </config>
+</extension>
