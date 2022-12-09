@@ -65,25 +65,25 @@
 			$list = parent::getOptions();
 			// 
 			// 
-			foreach($rows as $k => $v)
+			foreach($rows as $v)
 			{
-				// 
-				// 
-				$list[$v->id] = $v;
 				// 
 				// 
 				if ($v->allcats)
 				{
 					// 
 					// 
-					$list[$v->id]->cats = [];
+					$v->cats = [];
 				}
 				else
 				{
 					// 
 					// 
-					$list[$v->id]->cats = unserialize($v->cats);
+					$v->cats = unserialize($v->cats);
 				}
+				// 
+				// 
+				$list[] = $v;
 			}
 			// 
 			// 
